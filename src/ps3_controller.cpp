@@ -18,17 +18,19 @@ void ps3ControllerCallback(const sensor_msgs::Joy& msg)
 		enabled = false;
 	else
 		enabled = true;
-	
-*/
+        */
+
 	geometry_msgs::Twist velocity;
 
-	// von struct ps3Val zu velocity.bla umwandeln 
-	velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_LEFTWARDS];
-	velocity.linear.x  = msg.axes[STICK_LEFT_VERTICAL];
+        //Einlesen der Achsen
+        velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_LEFTWARDS];
+        velocity.linear.x  = msg.axes[STICK_LEFT_VERTICAL];
 
-	std::cout << "angular: " << velocity.angular.z << std::endl; 
-	std::cout << "linear:  " << velocity.linear.x  << std::endl; 
+         //Sinn und Zweck dieser beiden Zeilen?!
+        std::cout << "angular: " << velocity.angular.z << std::endl;
+        std::cout << "linear:  " << velocity.linear.x  << std::endl;
 
+         //publishing data
 	pubTwist.publish(velocity);
 	
 

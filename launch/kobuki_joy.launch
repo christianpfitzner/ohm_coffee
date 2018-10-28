@@ -12,9 +12,9 @@
   <!-- spawn the robot -->
   <include file="$(find kobuki_gazebo)/launch/includes/robot.launch.xml"/>
 
+<!-- Launches joy node for controlling Kobuki -->
 
-
- <!-- PS3 joy node -->
+ <!-- joy node -->
   <node respawn="true" pkg="joy"
         type="joy_node" name="PS3_joy" >
     <param name="dev" type="string" value="/dev/input/js0" />
@@ -26,6 +26,8 @@
   <param name="axis_angular" value="0" type="int"/>
   <param name="scale_linear" value="2" type="double"/>
   <param name="scale_angular" value="2" type="double"/>
+
+<!-- Launches kobuki_controller-node -->
 
   <node pkg="ohm_coffee" type="kobuki_controller" name="teleop"/>
 

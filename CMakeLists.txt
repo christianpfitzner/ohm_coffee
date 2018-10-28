@@ -135,6 +135,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(ps3_controller src/ps3_controller.cpp)
+add_executable(kobuki_controller src/kobuki_controller.cpp)
 
 #add_executable(${PROJECT_NAME}_node src/ps3_controller.cpp)
 #rosbuild_add_executable(turtle_teleop_ps3joy src/turtle_teleop_ps3joy.cpp)
@@ -151,6 +152,9 @@ add_executable(ps3_controller src/ps3_controller.cpp)
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(ps3_controller
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(kobuki_controller
    ${catkin_LIBRARIES}
  )
 

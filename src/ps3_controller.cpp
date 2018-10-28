@@ -18,13 +18,13 @@ void ps3ControllerCallback(const sensor_msgs::Joy& msg)
 		enabled = false;
 	else
 		enabled = true;
-        */
+*/
 
 	geometry_msgs::Twist velocity;
 
         //Einlesen der Achsen
-        velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_LEFTWARDS];
-        velocity.linear.x  = msg.axes[STICK_LEFT_VERTICAL];
+        velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_HORIZONTAL];
+        velocity.linear.x  = msg.axes[AXIS_STICK_LEFT_VERTICAL];
 
          //Sinn und Zweck dieser beiden Zeilen?!
         std::cout << "angular: " << velocity.angular.z << std::endl;

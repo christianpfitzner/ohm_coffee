@@ -1,0 +1,33 @@
+<launch>
+
+<!-- Launches Kobuki Gazebo simulation in an empty world -->
+
+  <!-- start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find kobuki_gazebo)/worlds/empty.world"/>
+  </include>
+  
+  <!-- spawn the robot -->
+  <include file="$(find kobuki_gazebo)/launch/includes/robot.launch.xml"/>
+
+
+
+ <!-- PS3 joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="PS3_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="0" type="int"/>
+  <param name="scale_linear" value="2" type="double"/>
+  <param name="scale_angular" value="2" type="double"/>
+
+  <node pkg="ohm_coffee" type="kobuki_controller" name="teleop"/>
+
+</launch>
+

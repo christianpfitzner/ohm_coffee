@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   joy
   roscpp
   std_msgs
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
@@ -137,6 +138,9 @@ include_directories(
 add_executable(ps3_controller src/ps3_controller.cpp)
 add_executable(kobuki_controller src/kobuki_controller.cpp)
 
+add_executable(tf_broadcaster src/tf_broadcaster.cpp)
+add_executable(tf_listener src/tf_listener.cpp)
+
 #add_executable(${PROJECT_NAME}_node src/ps3_controller.cpp)
 #rosbuild_add_executable(turtle_teleop_ps3joy src/turtle_teleop_ps3joy.cpp)
 
@@ -151,12 +155,12 @@ add_executable(kobuki_controller src/kobuki_controller.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(ps3_controller
-   ${catkin_LIBRARIES}
- )
- target_link_libraries(kobuki_controller
-   ${catkin_LIBRARIES}
- )
+
+target_link_libraries(ps3_controller ${catkin_LIBRARIES})
+target_link_libraries(kobuki_controller ${catkin_LIBRARIES})
+
+target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
+target_link_libraries(tf_listener ${catkin_LIBRARIES})
 
 #############
 ## Install ##

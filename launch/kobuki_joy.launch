@@ -1,6 +1,6 @@
 <launch>
 
-<!-- Launches Kobuki Gazebo simulation in an empty world -->
+<!-- Launches Kobuki Gazebo simul/ation in an empty world -->
 
   <!-- start Gazebo with an empty world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -19,6 +19,7 @@
         type="joy_node" name="PS3_joy" >
     <param name="dev" type="string" value="/dev/input/js0" />
     <param name="deadzone" value="0.12" />
+    <param name="autorepeat_rate" value="10" />
   </node>
 
  <!-- Axes -->

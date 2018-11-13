@@ -11,8 +11,8 @@ void kobukiControllerCallback(const sensor_msgs::Joy& msg)
 	geometry_msgs::Twist velocity;
 
         //read data from joystick
-        velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_HORIZONTAL];
-	//velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_VERTICAL];
+        //velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_HORIZONTAL];
+	velocity.angular.z = msg.axes[AXIS_STICK_RIGHT_VERTICAL];
         velocity.linear.x  = msg.axes[AXIS_STICK_LEFT_VERTICAL];
 
         std::cout << "angular: " << velocity.angular.z << std::endl;

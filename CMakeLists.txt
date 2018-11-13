@@ -141,6 +141,9 @@ add_executable(kobuki_controller src/kobuki_controller.cpp)
 add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 add_executable(tf_listener src/tf_listener.cpp)
 
+add_executable(tb_nav_control src/tb_nav_control.cpp)
+
+
 #add_executable(${PROJECT_NAME}_node src/ps3_controller.cpp)
 #rosbuild_add_executable(turtle_teleop_ps3joy src/turtle_teleop_ps3joy.cpp)
 
@@ -158,6 +161,8 @@ add_executable(tf_listener src/tf_listener.cpp)
 
 target_link_libraries(ps3_controller ${catkin_LIBRARIES})
 target_link_libraries(kobuki_controller ${catkin_LIBRARIES})
+
+target_link_libraries(tb_nav_control ${catkin_LIBRARIES})
 
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})

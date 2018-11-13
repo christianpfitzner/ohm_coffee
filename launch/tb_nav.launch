@@ -2,16 +2,17 @@
 
 
 
-<include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" />
+<include file="$(find ohm_coffee)/launch/turtlebot_map.launch" />
 
+<!--
 
-<include file="$(find rtabmap_ros)/launch/demo/demo_turtlebot_mapping.launch" >
+<include file="$(find ohm_coffee)/launch/turtlebot_mapping.launch" >
 	<arg name="simulation" value="true" />
 </include>
 
-<include file="$(find rtabmap_ros)/launch/demo/demo_turtlebot_rviz.launch" />
+<include file="$(find ohm_coffee)/launch/turtlebot_rviz.launch" />
 
-
+-->
 
 <!-- Launches joy node for controlling Kobuki -->
 

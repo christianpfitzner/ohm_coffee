@@ -32,7 +32,8 @@ int main(int argc, char** argv)
 	ros::NodeHandle nh;
 	
 	ros::Subscriber subJoy  = nh.subscribe("joy", 1, TB_control_Callback);
-	pubVel = nh.advertise<geometry_msgs::Twist>("/cmd_vel_mux/input/teleop", 1);
+	pubVel = nh.advertise<geometry_msgs::Twist>("/mobile_base/commands/velocity", 1);
+	//pubVel = nh.advertise<geometry_msgs::Twist>("/cmd_vel_mux/input/teleop", 1);
 	//pubVel = nh.advertise<geometry_msgs::Twist>("/mobile_base/commands/motor_power", 1);
 
 	

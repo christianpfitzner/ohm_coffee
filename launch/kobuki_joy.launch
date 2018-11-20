@@ -1,3 +1,6 @@
+<!-- launch file for controlling kobuki with controller in a gazebo simulation  -->
+
+
 <launch>
 
 <!-- Launches Kobuki Gazebo simulation in an empty world -->

@@ -1,9 +1,8 @@
+<!-- launch file for mapping test, control via joystick -->
+
 <launch>
 
-
-
 <include file="$(find ohm_coffee)/launch/ext/turtlebot_map.launch" />
-
 
 
 <include file="$(find ohm_coffee)/launch/ext/turtlebot_mapping.launch" >

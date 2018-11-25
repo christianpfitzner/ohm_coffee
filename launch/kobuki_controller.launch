@@ -9,7 +9,7 @@
   <include file="$(find turtlebot_bringup)/launch/minimal.launch">
 
   </include>
-  
+ 
 
 <!-- Launches joy node for controlling Kobuki -->
 
@@ -27,6 +27,7 @@
   <param name="axis_angular" value="0" type="int"/>
   <param name="scale_linear" value="2" type="double"/>
   <param name="scale_angular" value="2" type="double"/>
+
 
 <!-- Launches kobuki_controller-node -->
 

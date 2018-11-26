@@ -1,0 +1,10 @@
+<!-- yaml-postitions launch file -->
+
+<launch>
+
+<node pkg = "ohm_coffee" type = "yaml_test" name = "yaml_test" output = "screen">
+  <rosparam file="$(find ohm_coffee)/cfg/positions.yaml"/>
+</node>
+
+
+</launch>

@@ -144,6 +144,7 @@ add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 add_executable(tf_listener src/tf_listener.cpp)
 
 add_executable(tb_nav_control src/tb_nav_control.cpp)
+add_executable(yaml_test src/yaml_test.cpp)
 
 
 #add_executable(${PROJECT_NAME}_node src/ps3_controller.cpp)
@@ -168,6 +169,7 @@ target_link_libraries(tb_nav_control ${catkin_LIBRARIES})
 
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
+target_link_libraries(yaml_test ${catkin_LIBRARIES})
 
 #############
 ## Install ##

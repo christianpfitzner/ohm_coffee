@@ -2,8 +2,8 @@
 
 <launch>
 
-<node pkg = "ohm_coffee" type = "yaml_test" name = "yaml_test" output = "screen">
-  <rosparam file="$(find ohm_coffee)/cfg/positions.yaml"/>
+<node pkg = "ohm_coffee" type = "positioning_node" name = "positioning" output = "screen">
+  <rosparam file="$(find ohm_coffee)/config/positions.yaml"/>
 </node>
 
 

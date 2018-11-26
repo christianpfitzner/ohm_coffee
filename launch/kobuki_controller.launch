@@ -7,7 +7,6 @@
 
   <!-- bringup kobuki -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch">
-
   </include>
  
 

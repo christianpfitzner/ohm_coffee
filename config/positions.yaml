@@ -1,10 +1,24 @@
-#	target positions	
 
-# position_1
+# config file for target positions #	
 
-x: 1
-y: 2
-z: 80
+# position_1 #
+
+x1: 11
+y1: 21
+yaw1: 31
+
+# position_2 #
+
+x2: 12
+y2: 22
+yaw2: 32
+
+# position_3 #
+
+x3: 13
+y3: 23
+yaw3: 33
+
 
 testString: testWert
 

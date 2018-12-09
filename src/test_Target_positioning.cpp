@@ -41,7 +41,6 @@ int main(int argc, char** argv)
 	int var = 0;
 	int ID = 0;
 
-
 	ros::NodeHandle prvNh("~");
 
 	// parameters position 1

@@ -13,7 +13,7 @@
 
 <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch" >
 
-	<arg name="map_file" value="$(find ohm_coffee)/maps/labortest.yaml"/>
+	<arg name="map_file" value="$(find ohm_coffee)/maps/four_blocks.yaml"/>
 		
 </include>
 

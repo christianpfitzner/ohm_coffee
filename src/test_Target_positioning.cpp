@@ -38,43 +38,39 @@ int main(int argc, char** argv)
 {
 
 	ros::init(argc, argv, "TargetPositionsNode");
-	int var = 0;
+	//int var = 0;
 	int ID = 0;
+
+	int target_x = 0;
+	int target_y = 0;
+	int target_z = 0;
 
 	ros::NodeHandle prvNh("~");
 
 	// parameters position 1
 
-	prvNh.param<int>("x1", var, 0);
-	std::cout << " read position x1: " << var << std::endl;
+	prvNh.param<int>("x1", target_x, 0);
+	std::cout << "testParam1 :" << target_x << std::endl;
+	prvNh.param<int>("y1", target_y, 0);
+	prvNh.param<int>("yaw1", target_z, 0);
 
-	prvNh.param<int>("y1", var, 0);
-	std::cout << " read position y1: " << var << std::endl;
 
-	prvNh.param<int>("yaw1", var, 0);
-	std::cout << " read param yaw1: " << var << std::endl;
 
 	// parameters position 2
 
-	prvNh.param<int>("x2", var, 0);
-	std::cout << " read position x2: " << var << std::endl;
+	prvNh.param<int>("x2", target_x, 0);
+	std::cout << "testParam2 :" << target_x << std::endl;
+	prvNh.param<int>("y2", target_y, 0);
+	prvNh.param<int>("yaw2", target_z, 0);
 
-	prvNh.param<int>("y2", var, 0);
-	std::cout << " read position y2: " << var << std::endl;
 
-	prvNh.param<int>("yaw2", var, 0);
-	std::cout << " read param yaw2: " << var << std::endl;
 
 	// parameters position 3
 
-	prvNh.param<int>("x3", var, 0);
-	std::cout << " read position x3: " << var << std::endl;
-
-	prvNh.param<int>("y3", var, 0);
-	std::cout << " read position y3: " << var << std::endl;
-
-	prvNh.param<int>("yaw3", var, 0);
-	std::cout << " read param yaw3: " << var << std::endl;
+	prvNh.param<int>("x3", target_x, 0);
+	std::cout << "testParam3 :" << target_x << std::endl;
+	prvNh.param<int>("y3", target_y, 0);
+	prvNh.param<int>("yaw3", target_z, 0);
 
 
 

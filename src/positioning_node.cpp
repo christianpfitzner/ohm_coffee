@@ -11,18 +11,19 @@ int main(int argc, char** argv)
 	std::string s;
 	
 
+
 	ros::NodeHandle prvNh("~");
 
-	prvNh.param<int>("x1", var, 4711);
+	prvNh.param<int>("x1", var, 0);
 	std::cout << " read param x: " << var << std::endl;
 
-        prvNh.param<int>("y2", var, 4711);
+        prvNh.param<int>("y2", var, 0);
 	std::cout << " read param y: " << var << std::endl;
 
-	prvNh.param<std::string>("testString", s, "nix");
+	prvNh.param<std::string>("testString", s, "no data coming in..");
 	std::cout << " read string :" << s << std::endl;
 
-
+ros::spin(); 
 
 		
 

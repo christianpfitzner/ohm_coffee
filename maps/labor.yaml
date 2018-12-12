@@ -1,4 +1,4 @@
-image: /tmp/my_map.pgm
+image: /home/nvidia/catkin_ws/src/ohm_coffee/maps/labor.pgm
 resolution: 0.010000
 origin: [-12.200000, -11.240000, 0.000000]
 negate: 0

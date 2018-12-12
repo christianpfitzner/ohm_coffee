@@ -8,7 +8,7 @@
 
 int main(int argc, char** argv)
 {
-	std::cout << "Hallo Wo" << std::endl;
+	
 	ros::init (argc, argv,  "androidID");
 	ros::NodeHandle nhServer;
 	ros::Publisher android_pub = nhServer.advertise<std_msgs::String>("Android" , 1000);
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 		std_msgs::String msg;
 		std::string data;
 		new_sock >> data;
-std::cout << data << std::endl;
+		std::cout << data << std::endl;
 		msg.data = data;
 		android_pub.publish(msg);
 		}

@@ -81,7 +81,7 @@ int main(int argc, char** argv)
 
 
 /*
-	targetPos = prvNh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal geometry_msgs/PoseStamped '{ header: { frame_id: map }, pose: { position: { x: 1, y: 1 , z: 0}, orientation: { x: 0, y: 0, z: 0, w: 1 }}}'", 1);
+	targetPos = prvNh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal geometry_msgs/PoseStamped '{ header: { frame_id: "map" }, pose: { position: { x: 1, y: 1 , z: 0}, orientation: { x: 0, y: 0, z: 0, w: 1 }}}'", 1);
 */
 	//targetPositions.publish(PoseStamped);
 

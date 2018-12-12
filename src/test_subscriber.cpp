@@ -11,7 +11,8 @@ int main(int argc, char** argv)
 	ros::init(argc, argv, "Subscriber");
 	ros::NodeHandle nhServer;
 	ros::Subscriber sub = nhServer.subscribe("Android", 1, androidIDCallback);
-ros::spin(); 
+
+	ros::spin(); 
 
 //return 0;
 }

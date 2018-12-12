@@ -5,21 +5,25 @@
 
 
 
-ros::Publisher targetPos;
+
 
 void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 {
-	ROS_INFO("Android ID: [%s]", msg->data.c_str());
+	ROS_DEBUG("Android ID: [%s]", msg->data.c_str());
 
-
-/*	
-	if (ID == 123)
+	std::string angelika = "angelika";
+	std::string data = msg->data;
+	if (data.compare(angelika) == 0)
 	{
-	x = 
-	y = 
+	std::cout << "perfekt" << std::endl; 
 	}
+else
+{
+std::cout << "other name" << std::endl;
+}
+/*
 
-	if (ID == 456)r
+	if (ID == 456)
 	{
 	x = 
 	y = 
@@ -42,50 +46,72 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 int main(int argc, char** argv)
 {
 
+	geometry_msgs::PoseStamped Target;
+
 	ros::init(argc, argv, "TargetPositionsNode");
-	//int var = 0;
+	
 	int ID = 0;
 
 	int target_x = 0;
 	int target_y = 0;
 	int target_z = 0;
-
+	
+	
 	ros::NodeHandle prvNh("~");
+	ros::NodeHandle nhServer;
 
 
 	// parameters position 1
 
 	prvNh.param<int>("x1", target_x, 0);
 	std::cout << "testParam1 :" << target_x << std::endl;
-	prvNh.param<int>("y1", target_y, 0);
-	prvNh.param<int>("yaw1", target_z, 0);
+
+	Target.header.frame_id = "map";	
+	Target.pose.position.x	= target_x;
+	Target.pose.position.y = 2;
+	Target.pose.position.z = 0;
+	Target.pose.orientation.x = 0;
+	Target.pose.orientation.y = 0;
+	Target.pose.orientation.z = 0;
+	Target.pose.orientation.w = 1;
+	std::cout << "testParam2 :" << Target.pose.orientation.w << std::endl;
+	
 
 
-/*
-	// parameters position 2
-
-	prvNh.param<int>("x2", target_x, 0);
-	prvNh.param<int>("y2", target_y, 0);
-	prvNh.param<int>("yaw2", target_z, 0);
+	//'{ header: { frame_id: map }, pose: { position: { x: 1, y: 1 , z: 0}, orientation: { x: 0, y: 0, z: 0, w: 1 }}}'
 
 
-	// parameters position 3
 
-	prvNh.param<int>("x3", target_x, 0);
-	prvNh.param<int>("y3", target_y, 0);
-	prvNh.param<int>("yaw3", target_z, 0);
-
-*/
-
-	ros::Subscriber sub = prvNh.subscribe("Android", 1, androidIDCallback);
+	ros::Subscriber sub = nhServer.subscribe("Android", 1, androidIDCallback);
 
 
-/*
-	targetPos = prvNh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal geometry_msgs/PoseStamped '{ header: { frame_id: "map" }, pose: { position: { x: 1, y: 1 , z: 0}, orientation: { x: 0, y: 0, z: 0, w: 1 }}}'", 1);
-*/
-	//targetPositions.publish(PoseStamped);
+	XmlRpc::XmlRpcValue param_list;
+	if( !prvNh.getParam("x", param_list) )
+	    ROS_INFO("Still failed...");
+	else{
+	    ROS_INFO("succes");
+	    std::cout << param_list[0] << std::endl; 
+	}
 
-	ros::spin(); 
+	ros::Publisher targetPos = nhServer.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);
+	//targetPos = prvNh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal/geometry_msgs/PoseStamped", 1);
 
+
+	targetPos.publish(Target);
+	ros::spin();
+	while(ros::ok())
+	{
+		ros::spinOnce();
+	}
+
+
+	ros::Rate rate(10); 
+	while(ros::ok())
+	{
+		targetPos.publish(Target);
+		std::cout << __PRETTY_FUNCTION__ << std::endl;
+		ros::spinOnce(); 
+		//rate.sleep(); 	
+	}
 		
 }

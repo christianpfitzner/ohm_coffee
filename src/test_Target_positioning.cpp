@@ -2,7 +2,9 @@
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/PoseStamped.h>
 #include "std_msgs/String.h"
-
+#include <vector>
+#include <iostream>
+#include <algorithm>
 
 
 
@@ -11,16 +13,16 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 {
 	ROS_DEBUG("Android ID: [%s]", msg->data.c_str());
 
-	std::string angelika = "angelika";
+	//std::string angelika = "angelika";
 	std::string data = msg->data;
-	if (data.compare(angelika) == 0)
+	/*if (data.compare(angelika) == 0)
 	{
 	std::cout << "perfekt" << std::endl; 
 	}
 else
 {
 std::cout << "other name" << std::endl;
-}
+}*/
 /*
 
 	if (ID == 456)
@@ -85,13 +87,34 @@ int main(int argc, char** argv)
 	ros::Subscriber sub = nhServer.subscribe("Android", 1, androidIDCallback);
 
 
-	XmlRpc::XmlRpcValue param_list;
-	if( !prvNh.getParam("x", param_list) )
+	XmlRpc::XmlRpcValue ID_list;
+	if( !prvNh.getParam("id", ID_list) )
 	    ROS_INFO("Still failed...");
 	else{
 	    ROS_INFO("succes");
-	    std::cout << param_list[0] << std::endl; 
+	    //std::cout << ID_list[0] << std::endl; 
+	    //std::cout << ID_list[1] << std::endl;
 	}
+
+    	std::vector<std::string> persons;
+
+	for(int i=0; i < ID_list.size(); i++)
+	{
+		persons.push_back(ID_list[i]);
+	}	
+
+		//"angelika" noch variabel gestalden!
+    	int pos = std::find(persons.begin(), persons.end(), data "angelika") - persons.begin();
+    
+    	if(pos < persons.size())
+        	std::cout << "Position :" << pos << std::endl;
+    	else
+        	std::cout << "ID not found... please check" << std::endl;
+
+	//übergabe idee.. 
+//	param.pose.x = Position_list[pos]
+
+
 
 	ros::Publisher targetPos = nhServer.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);
 	//targetPos = prvNh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal/geometry_msgs/PoseStamped", 1);

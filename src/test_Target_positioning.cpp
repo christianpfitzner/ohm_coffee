@@ -14,7 +14,7 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 	ROS_DEBUG("Android ID: [%s]", msg->data.c_str());
 
 	//std::string angelika = "angelika";
-	std::string data = msg->data;
+	//std::string data = msg->data;
 	/*if (data.compare(angelika) == 0)
 	{
 	std::cout << "perfekt" << std::endl; 
@@ -101,8 +101,9 @@ int main(int argc, char** argv)
 	for(int i=0; i < ID_list.size(); i++)
 	{
 		persons.push_back(ID_list[i]);
-	}	
-
+	}
+	
+/*
 		//"angelika" noch variabel gestalden!
     	int pos = std::find(persons.begin(), persons.end(), data "angelika") - persons.begin();
     
@@ -110,7 +111,7 @@ int main(int argc, char** argv)
         	std::cout << "Position :" << pos << std::endl;
     	else
         	std::cout << "ID not found... please check" << std::endl;
-
+*/
 	//übergabe idee.. 
 //	param.pose.x = Position_list[pos]
 

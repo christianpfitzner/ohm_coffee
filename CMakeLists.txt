@@ -144,6 +144,7 @@ add_executable(kobuki_controller src/kobuki_controller.cpp)
 add_executable(tb_nav_control src/tb_nav_control.cpp)
 add_executable(positioning_node src/positioning_node.cpp)
 add_executable(test_Target_positioning src/test_Target_positioning.cpp)
+add_executable(test_Target_positioning_neu src/test_Target_positioning_neu.cpp)
 
 add_executable(simple_server_main coffee_th_server/simple_server_main.cpp coffee_th_server/ServerSocket.cpp coffee_th_server/Socket.cpp)
 add_executable(test_subscriber src/test_subscriber.cpp)
@@ -174,7 +175,7 @@ target_link_libraries(positioning_node ${catkin_LIBRARIES})
 target_link_libraries(simple_server_main ${catkin_LIBRARIES})
 target_link_libraries(test_subscriber ${catkin_LIBRARIES})
 target_link_libraries(test_Target_positioning ${catkin_LIBRARIES})
-
+target_link_libraries(test_Target_positioning_neu ${catkin_LIBRARIES})
 
 
 

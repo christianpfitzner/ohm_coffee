@@ -55,14 +55,15 @@ int main(int argc, char** argv)
 		//vektor-name hier variabel.. 
 	XmlRpc::XmlRpcValue ID_list;
 
-/*	if (!prvNh.getParam("id", ID_list) )
+	if (!prvNh.getParam("id", ID_list) )
 	    ROS_INFO("failed to get data...");
 	else{
 	    ROS_INFO("succes");
-	    //std::cout << ID_list[0] << std::endl; 
-	    //std::cout << ID_list[1] << std::endl;
+	    std::cout << "ID : " << ID_list[1] << std::endl; 
+	    std::cout << ID_list[1] << std::endl;
 	}
-*/
+
+
     	std::vector<std::string> persons;
 
 	for(int i=0; i < ID_list.size(); i++)
@@ -70,20 +71,23 @@ int main(int argc, char** argv)
 		persons.push_back(ID_list[i]);
 	}	
 
+	
 /*
-
 		//"angelika" noch variabel gestalten!
-    	int pos = std::find(persons.begin(), persons.end(), data "angelika") - persons.begin();
+    	//int pos = std::find(ID_list.begin(), ID_list.end(), data "angelika") - ID_list.begin();
     
-    	if(pos < persons.size())
+	int pos = std::find(ID_list.begin(), ID_list.end(), data "angelika") - ID_list.begin();
+    
+    	if(pos < ID_list.size())
         	std::cout << "Position :" << pos << std::endl;
     	else
         	std::cout << "ID not found... please check" << std::endl;
+
 */
 
 
 	Target.header.frame_id = "map";	
-	Target.pose.position.x	= 1;
+	Target.pose.position.x	= 2;
 /*	Target.pose.position.y = ID_list[2];
 	Target.pose.orientation.w = ID_list[3];*/
 
@@ -94,7 +98,7 @@ int main(int argc, char** argv)
 
 
 	//publish
-	//targetPos.publish(Target);
+	targetPos.publish(Target);
 
 	//ros::spin();
 

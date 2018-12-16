@@ -13,7 +13,7 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 {
 	ROS_DEBUG("Android ID: [%s]", msg->data.c_str());
 
-/*
+
 	std::string angelika = "angelika";
 	std::string data = msg->data;
 	if (data.compare(angelika) == 0)
@@ -24,7 +24,7 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 	{
 	std::cout << "other name" << std::endl;
 	}
-*/
+
 
 
 
@@ -48,16 +48,12 @@ int main(int argc, char** argv)
 	geometry_msgs::PoseStamped Target;
 
 
-	std::string angelika = "angelika";
-	//std::string data = msg->data;
-
 
 
 	ros::Subscriber sub = nhServer.subscribe("Android", 1, androidIDCallback);
 
-		//vektor-name hier variabel statt fix vorgegeben.. 
+		//vektor-name hier variabel.. 
 	XmlRpc::XmlRpcValue ID_list;
-//	prvNh.getParam("id", ID_list);
 
 /*	if (!prvNh.getParam("id", ID_list) )
 	    ROS_INFO("failed to get data...");
@@ -94,16 +90,13 @@ int main(int argc, char** argv)
 	std::cout << "testParam2 :" << Target.pose.position.x << std::endl;
 	
 
-
-
 	ros::Publisher targetPos = nhServer.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);
-	
-	//targetPos = prvNh.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal/geometry_msgs/PoseStamped", 1);
+
 
 	//publish
-	targetPos.publish(Target);
+	//targetPos.publish(Target);
 
-	ros::spin();
+	//ros::spin();
 
 	while(ros::ok())
 	{

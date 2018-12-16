@@ -101,7 +101,8 @@ int main(int argc, char** argv)
 	for(int i=0; i < ID_list.size(); i++)
 	{
 		persons.push_back(ID_list[i]);
-	}	
+	}
+	
 /*
 		//"angelika" noch variabel gestalden!
     	int pos = std::find(persons.begin(), persons.end(), data "angelika") - persons.begin();

@@ -16,7 +16,7 @@
 
 <!-- run server node -->
 
-<node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" output = "screen">
+<node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" >
 </node>
 
 

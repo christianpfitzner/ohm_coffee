@@ -1,5 +1,9 @@
 <!-- launch file for using own maps in reality -->
 
+<!-- bringup kobuki -->
+
+<include file="$(find turtlebot_bringup)/launch/minimal.launch" >
+</include>
 
 <launch>
 
@@ -10,11 +14,10 @@
 
 </include>
 
+<!-- run server node -->
 
-<!-- bringup kobuki -->
-
-<include file="$(find turtlebot_bringup)/launch/minimal.launch" >
-</include>
+<node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" output = "screen">
+</node>
 
 
 <!-- launch positions node -->
@@ -22,10 +25,7 @@
 <include file="$(find ohm_coffee)/launch/targetPositioning.launch" >
 </include>
 
-<!-- run server node -->
 
-<node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" output = "screen">
-</node>
 
 <!-- opening rviz for visualization 
 

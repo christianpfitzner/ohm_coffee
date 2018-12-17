@@ -29,7 +29,7 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 
 
 
-	//targetPos.publish();
+	//targetPos.publish(Target);
 }
 
 
@@ -52,16 +52,41 @@ int main(int argc, char** argv)
 
 	ros::Subscriber sub = nhServer.subscribe("Android", 1, androidIDCallback);
 
-		//vektor-name hier variabel.. 
+		//vektor-name hier variabel?! 
 	XmlRpc::XmlRpcValue ID_list;
+	XmlRpc::XmlRpcValue x_list;
+	XmlRpc::XmlRpcValue y_list;
 
-	if (!prvNh.getParam("id", ID_list) )
-	    ROS_INFO("failed to get data...");
-	else{
-	    ROS_INFO("succes");
-	    std::cout << "ID : " << ID_list[1] << std::endl; 
-	    std::cout << ID_list[1] << std::endl;
+	if (!prvNh.getParam("id", ID_list)) 
+	{
+	ROS_ERROR("failed to get data - check ID!");
+	return(0);
 	}
+	else{
+	    ROS_INFO("ID-param ok");
+	    std::cout << "ID : " << ID_list[1] << std::endl;
+	    }
+
+	if(!prvNh.getParam("x", x_list)) 
+	{
+	ROS_ERROR("failed to get data - check x-positions!");
+	return(0);
+	}
+	else{
+	    ROS_INFO("x-param ok");
+	    std::cout << "x : " << x_list[0] << std::endl;
+	    }
+
+	if (!prvNh.getParam("y", y_list)) 
+	{
+   	ROS_ERROR("failed to get data - check y-positions!");
+	return(0);
+	}
+	else{
+	    ROS_INFO("y-param ok");
+	    std::cout << "y : " << x_list[0] << std::endl;
+	    }
+
 
 
     	std::vector<std::string> persons;
@@ -87,11 +112,11 @@ int main(int argc, char** argv)
 
 
 	Target.header.frame_id = "map";	
-	Target.pose.position.x	= 2;
-/*	Target.pose.position.y = ID_list[2];
-	Target.pose.orientation.w = ID_list[3];*/
+	Target.pose.position.x = x_list[0];
+/*	Target.pose.position.y = y_list[pos];
+	Target.pose.orientation.w = 1;*/
 
-	std::cout << "testParam2 :" << Target.pose.position.x << std::endl;
+	//std::cout << "testParam2 :" << Target.pose.position.x << std::endl;
 	
 
 	ros::Publisher targetPos = nhServer.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);

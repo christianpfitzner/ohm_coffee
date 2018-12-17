@@ -1,14 +1,12 @@
 <!-- launch file for using own maps in reality -->
 
 
-
 <launch>
 
 
 <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch" >
 
 	<arg name="map_file" value="$(find ohm_coffee)/maps/four_blocks.yaml"/>
-
 
 </include>
 
@@ -19,6 +17,15 @@
 </include>
 
 
+<!-- launch positions node -->
+
+<include file="$(find ohm_coffee)/launch/targetPositioning.launch" >
+</include>
+
+<!-- run server node -->
+
+<node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" output = "screen">
+</node>
 
 <!-- opening rviz for visualization 
 

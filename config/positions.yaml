@@ -1,17 +1,18 @@
 
 # config file for target positions
 # file is linked to targetPositioning node 	
-# each vektor has 3 parameters: x, y, w
+# each vektor has 4 parameters: x, y, w, z
+# use x, y for target position 
+# use w, z for orientation when goal reached
 
 
 
+angelika: [-0.0321971960366, -2.78506827354, 1.0, 0.0]
 
-angelika: [-0.0321971960366, -2.78506827354, 1.0]
+daniel: [-2.60046577454, 0.06789290905, 1.0, 0.0] 
 
-daniel: [-2.60046577454, 0.06789290905, 1.0] 
+simon: [-0.0468119382858, 2.69467902184, 1.0, 0.0]
 
-simon: [-0.0468119382858, 2.69467902184, 1.0]
-
-lukas: [2.4814748764, 0.0248143672943, 1.0]
+lukas: [2.4814748764, 0.0248143672943, 1.0, 0.0]
 
 

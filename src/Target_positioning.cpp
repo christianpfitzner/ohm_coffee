@@ -18,7 +18,8 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 	//publisher				
 	ros::Publisher targetPos;				
 
-	XmlRpc::XmlRpcValue param_list;		
+	XmlRpc::XmlRpcValue param_list;
+		
 	geometry_msgs::PoseStamped Target;
 
 	std::string getData;

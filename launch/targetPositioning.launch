@@ -1,8 +1,8 @@
-<!-- yaml-postitions launch file -->
+<!-- launch file for starting a positioning node with parameters out of .yaml file -->
 
 <launch>
 
-<node pkg = "ohm_coffee" type = "test_Target_positioning" name = "target_positioning" output = "screen">
+<node pkg = "ohm_coffee" type = "Target_positioning" name = "target_positioning" output = "screen">
   <rosparam file="$(find ohm_coffee)/config/positions.yaml"/>
 </node>
 

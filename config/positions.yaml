@@ -1,44 +1,12 @@
 
-# config file for target positions #	
-
-# position_1 #
-
-#x1: -0.0321971960366
-#y1: -2.78506827354
-
-
-# position_2 #
-
-#x2: -2.60046577454
-#y2: 0.06789290905
-
-
-# position_3 #
-
-#x3: -0.0468119382858
-#y3: 2.69467902184
-
-
-# position_4 #
-
-#x4: 2.4814748764
-#y4: 0.0248143672943
-
-
-#x5: 2.4814748764
-#y5: 0.0248143672943
-
-#
-home: []
-
-
-x: [-0.0321971960366, 1.00, 3.00]
-y: [-2.78506827354, 1.00, 2.00]
-id: [angelika, simon, bob]
+# config file for target positions
+# file is linked to targetPositioning node 	
+# each vektor has 3 parameters: x, y, w
+# which are positions within the map
 
 
 
-angelika: [-0.0321971960366, -2.78506827354, 1.00]
+angelika: [-0.0321971960366, -2.78506827354, 1.0]
 
 daniel: [-2.60046577454, 0.06789290905, 1.0] 
 

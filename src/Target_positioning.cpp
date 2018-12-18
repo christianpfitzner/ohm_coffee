@@ -11,39 +11,44 @@
 
 void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 {
-	ros::NodeHandle prvNh("~");
+	//private nodehandle for getting parameters out of .yaml file
+	ros::NodeHandle prvNh("~");	
+	//regular nodehandle 	
 	ros::NodeHandle nhServer;
-	ros::Publisher targetPos;
+	//publisher				
+	ros::Publisher targetPos;				
 
-	XmlRpc::XmlRpcValue param_list;
+	XmlRpc::XmlRpcValue param_list;		
 	geometry_msgs::PoseStamped Target;
 
-	std::string name;
+	std::string getData;
 	std::string name_string;
 	
-
-	ROS_DEBUG("Android ID: [%s]", msg->data.c_str());
+	//getting data from android server
+	ROS_DEBUG("Android ID: [%s]", msg->data.c_str());	
 	
-	name = msg->data;
+	getData = msg->data;
+	std::cout << getData << std::endl;
 
-	std::cout << name << std::endl;
-	name_string = name;
+	name_string = getData;
 
-	if (!prvNh.getParam(name_string, param_list)) 
+
+	//search for received name in parameters list
+	if (!prvNh.getParam(name_string, param_list)) 		
 	{
 	ROS_ERROR("failed to get data - check ID!");
 	}
 	else{
 	    ROS_INFO("param ok");
 	    }
-
-	std::cout << "testwert: " << param_list[0] << std::endl;
-
+		
+	//define positions to publish
 	Target.header.frame_id = "map";	
 	Target.pose.position.x = param_list[0];
 	Target.pose.position.y = param_list[1];
 	Target.pose.orientation.w = param_list[2];
 
+	//publish data
 	targetPos = nhServer.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);
 	targetPos.publish(Target);
 
@@ -53,17 +58,12 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 
 
 
-
-
 int main(int argc, char** argv)
 {
 
 	ros::init(argc, argv, "TargetPositionsNode");
-
 	
 	ros::NodeHandle nhServer;
-
-	
 
 	ros::Subscriber sub = nhServer.subscribe("Android", 1, androidIDCallback);
 

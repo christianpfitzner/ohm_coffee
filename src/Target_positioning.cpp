@@ -48,6 +48,7 @@ void androidIDCallback(const std_msgs::String::ConstPtr& msg)
 	Target.pose.position.x = param_list[0];
 	Target.pose.position.y = param_list[1];
 	Target.pose.orientation.w = param_list[2];
+	Target.pose.orientation.z = param_list[3];
 
 	//publish data
 	targetPos = nhServer.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1);

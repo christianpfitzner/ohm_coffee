@@ -3,16 +3,15 @@
 # file is linked to targetPositioning node 	
 # each vektor has 4 parameters: x, y, w, z
 # use x, y for target position 
-# use w, z for orientation when goal reached
+# use w, z for orientation when goal reached (Quaternion)
 
 
+angelika: [-6.280, 0.217,  -0.061, 0.998]
 
-angelika: [0.975, 0.662,  0.448, 0.894]
+daniel: [-7.966, -0.909, -0.003, 1.00]
 
-daniel: [-0.087, -0.416, 0.948, -0.318] 
+simon: [10.849, -2.954, 0.976, 0.218]
 
-simon: [5.84, -4.582, 1.0, 0.0]
-
-lukas: [6.798, -5.744, 1.0, 0.0]
+lukas: [-9.267, 1.119, -0.127, 0.992]
 
 

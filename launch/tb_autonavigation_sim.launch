@@ -5,15 +5,15 @@
 <!-- opening a prebuild world in gazebo simulation -->
 
 <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" >
-	<arg name="world_file" value="$(find ohm_coffee)/maps/four_blocks.world"/>
-	
+<!--	<arg name="world_file" value="$(find ohm_coffee)/maps/four_blocks.world"/>
+	-->
 </include>
 
 <!-- navigation demo -->	
 
 <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch" >
 
-	<arg name="map_file" value="$(find ohm_coffee)/maps/four_blocks.yaml"/>
+	<arg name="map_file" value="$(find ohm_coffee)/maps/stockwerk.yaml"/>
 		
 </include>
 
@@ -24,13 +24,18 @@
 </include>
 
 
-<!-- launch target positions node 
+<!-- launch target positions node -->
 
 <include file="$(find ohm_coffee)/launch/targetPositioning.launch" >
 		
 </include>
 
--->
+<!-- run server node -->
+
+<node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" >
+</node>
+
+
 
 </launch>
 

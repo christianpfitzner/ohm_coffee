@@ -1,0 +1,10 @@
+The date created here are a part of the program you will find here http//:tldp.org/LDP/LG/issue74/tougher.html (Copyright 2002, Rob Rougher) and were changed by Angelika Mößner 2018.
+
+With this created server, data can be exchanged between processes with the help of a socket. The client which send the data are a Android app. The data is exchanged in one direction only.
+
+/*
+*	@author: Angelika Mößner
+*	@version 1.1 2018/27/11
+*/
+
+

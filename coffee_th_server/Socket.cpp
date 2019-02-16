@@ -1,6 +1,3 @@
-// Implementation of the Socket class.
-
-
 #include "Socket.h"
 #include "string.h"
 #include <string.h>
@@ -8,6 +5,20 @@
 #include <fcntl.h>
 #include <iostream>
 
+/*
+*	Implementation of the ServerSocket class	
+*	@param: int prot for the unique identification of the port
+*	@param: string s the data sent from client
+*	@param: socke the socket
+*	@function create() to create the server socket
+*	@function bind() to bind the port
+*	@function listen() if data is sent for client
+*	@function recv() if data are okay
+*	@function send() string s send data to server
+*	@function accept() controlle the server socket
+*	@function connect() provides the connetion with the host and port
+*	@function set_non_blocking () pay attention if the connetion is blocked
+*/
 
 
 Socket::Socket() :

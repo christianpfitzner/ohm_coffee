@@ -1,3 +1,5 @@
+//file defining buttons and axis names
+
 // note on plain values:
 // buttons are either 0 or 1
 // button axes go from 0 to -1

@@ -1,10 +1,11 @@
-// Definition of the ServerSocket class
-
 #ifndef ServerSocket_class
 #define ServerSocket_class
 
 #include "Socket.h"
 
+/*
+ *	The header ServerSocket includes all functions and param for the .cpp files
+*/
 
 class ServerSocket : private Socket
 {

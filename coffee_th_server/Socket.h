@@ -1,5 +1,3 @@
-// Definition of the Socket class
-
 #ifndef Socket_class
 #define Socket_class
 
@@ -11,6 +9,10 @@
 #include <unistd.h>
 #include <string>
 #include <arpa/inet.h>
+
+/*
+ *	The header Socket includes all functions and param for the .cpp files
+*/
 
 
 const int MAXHOSTNAME = 200;

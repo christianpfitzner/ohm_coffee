@@ -1,6 +1,6 @@
 
 # config file for target positions
-# file is linked to targetPositioning node 	
+# file is linked to targetPositioning node as parameter	
 # each vektor has 4 parameters: x, y, w, z
 # use x, y for target position 
 # use w, z for orientation when goal reached (Quaternion)

@@ -1,10 +1,11 @@
-// SocketException class
-
-
 #ifndef SocketException_class
 #define SocketException_class
 
 #include <string>
+
+/*
+ *	The header SocketException includes all functions and param for the .cpp files which has some Exceptions
+*/
 
 class SocketException
 {

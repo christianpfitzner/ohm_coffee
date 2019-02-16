@@ -1,7 +1,18 @@
-// Implementation of the ServerSocket class
-
 #include "ServerSocket.h"
 #include "SocketException.h"
+
+/*
+*	Implementation of the ServerSocket class	
+*	@param: int prot for the unique identification of the port
+*	@param: string s the data sent from client
+*	@param: socke the socket
+*	@function create() to create the server socket
+*	@function bind() to bind the port
+*	@function listen() if data is sent for client
+*	@function recv() if data are okay
+*	@function send() string s send data to server
+*	@function accept() controlle the server socket
+*/
 
 
 ServerSocket::ServerSocket ( int port )

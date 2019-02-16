@@ -6,13 +6,15 @@
 
 
   <!-- bringup kobuki -->
+
 <include file="$(find turtlebot_bringup)/launch/minimal.launch">
   </include> 
 
 
-<!-- Launches joy node for controlling Kobuki -->
+<!-- launch joy node for controlling Kobuki via PS3-controller -->
 
  <!-- joy node -->
+
   <node respawn="true" pkg="joy"
         type="joy_node" name="joy_controller" >
     <param name="dev" type="string" value="/dev/input/js0" />
@@ -22,6 +24,7 @@
   </node>
 
  <!-- Axes -->
+
   <param name="axis_linear" value="1" type="int"/>
   <param name="axis_angular" value="0" type="int"/>
   <param name="scale_linear" value="2" type="double"/>

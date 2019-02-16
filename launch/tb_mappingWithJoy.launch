@@ -1,12 +1,16 @@
-<!-- launch file for mapping test, control via joystick -->
+<!-- this launch file is used for recording a new map, controls via PS3-controller -->
 
 <launch>
 
+
+<!-- bringup Kobuki -->
+
 <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
 
+<!-- start mapping -->
 
 <include file="$(find turtlebot_navigation)/launch/gmapping_demo.launch" >
-<!--	<arg name="simulation" value="true" /> -->
+
 </include>
 
 

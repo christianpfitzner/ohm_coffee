@@ -1,19 +1,19 @@
-<!-- launch file for using own maps in navigation demo -->
+<!-- launch file for using own maps in navigation demo with kobuki -->
 
 <launch>
 
 <!-- opening a prebuild world in gazebo simulation -->
 
 <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" >
-<!--	<arg name="world_file" value="$(find ohm_coffee)/maps/four_blocks.world"/>
-	-->
+	<arg name="world_file" value="$(find ohm_coffee)/maps/four_blocks.world"/>
+	
 </include>
 
-<!-- navigation demo -->	
+<!-- start navigation, prebuilt map included as argument -->
 
 <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch" >
 
-	<arg name="map_file" value="$(find ohm_coffee)/maps/stockwerk.yaml"/>
+	<arg name="map_file" value="$(find ohm_coffee)/maps/four_blocks.yaml"/>
 		
 </include>
 
@@ -30,7 +30,7 @@
 		
 </include>
 
-<!-- run server node -->
+<!-- run server node -> receiving target positions via android app -->
 
 <node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" >
 </node>

@@ -1,4 +1,4 @@
-<!-- launch file for brining up kobuki within a real map -->
+<!-- launch file for brining up kobuki including navigation within a real map -->
 
 
 <launch>
@@ -9,7 +9,7 @@
 </include>
 
 
-
+<!-- start navigation, prebuilt map included as argument -->
 
 <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch" >
 
@@ -17,7 +17,7 @@
 
 </include>
 
-<!-- run server node -->
+<!-- run server node -> receiving target positions via android app -->
 
 <node pkg = "ohm_coffee" type = "simple_server_main" name = "android_server" >
 </node>
@@ -29,12 +29,14 @@
 </include>
 
 
+<!-- rviz only runs when screen attached to the tegra-board! Uncommend the following lines if visualization is supposed to run on tegra -->
 
 <!-- opening rviz for visualization 
 
 <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch" >
 		
 </include>
+
 -->
 
 
